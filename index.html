@@ -1,341 +1,681 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Message for Amoyy 🌸✨</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Quicksand', sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Amoyy 🌷</title><style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-      overflow-x: hidden;
-      position: relative;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6ee, #fff8fa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #444;
+  overflow-x: hidden;
+}
 
-    /* Background Hati Melayang */
-    .bg-heart {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 20px;
-      animation: floatUp 5s linear infinite;
-      z-index: 0;
-      pointer-events: none;
-    }
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,.96);
+  border-radius: 28px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 15px 45px rgba(190,80,120,.18);
+  position: relative;
+  overflow: hidden;
+}
 
-    @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2);
-        opacity: 0;
-      }
-    }
-    
-    .card {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(10px);
-      border-radius: 28px;
-      padding: 30px 24px;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      border: 2px solid rgba(255,255,255,0.7);
-      z-index: 1;
-    }
+h1, h2, h3 {
+  color: #d45c7d;
+}
 
-    .sticker {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 12px;
-      animation: bounce 2s infinite;
-    }
+p {
+  line-height: 1.6;
+  font-size: 14px;
+}
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+.icon {
+  font-size: 55px;
+  animation: float 2s ease-in-out infinite;
+}
 
-    h1 {
-      font-family: 'Fredoka One', cursive;
-      color: #ff4b72;
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
+button {
+  border: none;
+  background: #e87897;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 6px;
+  transition: .2s;
+}
 
-    p.subtitle {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
+button:hover {
+  transform: scale(1.06);
+  background: #d85d80;
+}
 
-    .letter-box {
-      background: #fff0f3;
-      border: 2px dashed #ff8fa3;
-      border-radius: 18px;
-      padding: 16px;
-      margin-bottom: 18px;
-      display: none;
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.6;
-      color: #4a4a4a;
-      animation: fadeIn 0.6s ease;
-    }
+button:active {
+  transform: scale(.95);
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+.hidden {
+  display: none !important;
+}
 
-    /* Grid Tombol-Tombol Lucu */
-    .buttons-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-    }
+/* PROGRESS */
 
-    .btn {
-      background: #ff758f;
-      color: white;
-      border: none;
-      padding: 12px 14px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(255, 117, 143, 0.3);
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin: 15px 0;
+}
 
-    .btn:hover {
-      background: #ff4d6d;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(255, 77, 109, 0.4);
-    }
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ead1d8;
+  border-radius: 50%;
+}
 
-    .btn:active {
-      transform: translateY(0);
-    }
+.dot.active {
+  background: #df6e8e;
+}
 
-    .btn-main {
-      grid-column: span 2;
-      background: linear-gradient(45deg, #ff4d6d, #ff758f);
-      font-size: 15px;
-      padding: 14px;
-    }
+/* GAME AREA */
 
-    /* Tombol Musik Floating */
-    .music-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: white;
-      border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-      cursor: pointer;
-      z-index: 10;
-    }
-  </style>
-</head>
-<body>
+.game-area {
+  height: 250px;
+  background: #fff0f4;
+  border: 2px dashed #efb0c1;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 15px;
+}
 
-  <div id="hearts-container"></div>
+/* GAME 1 */
 
-  <div class="card">
-    <img src="https://feeldreams.github.io/pandakuning.gif" alt="Sticker Amoyy" class="sticker">
-    
-    <h1>Alooo Amoyy! 🌺</h1>
-    <p class="subtitle">Sentuh tombol-tombol lucu di bawah ini ya! 🫶✨</p>
+#heart {
+  position: absolute;
+  font-size: 38px;
+  cursor: pointer;
+  user-select: none;
+  transition: .15s;
+}
 
-    <button class="btn btn-main" onclick="bukaSurat()">💌 Buka Surat Buat Amoyy</button>
+#heart:hover {
+  transform: scale(1.2);
+}
 
-    <div class="letter-box" id="letterBox">
-      <p><b>Hai Amoyy manis! 💕</b></p>
-      <p>Makasih ya udah selalu hadir dan bikin suasana jadi lebih menyenangkan. Tetap jadi <b>Amoyy</b> yang ceria, menggemaskan, dan selalu tersenyum!</p>
-      <p style="margin-top: 8px;">Kamu itu sangat berharga! ᯓᡣ𐭩✨</p>
-    </div>
+/* GAME 2 */
 
-    <div class="buttons-grid">
-      <button class="btn" onclick="kirimLove()">🩷 Kirim Love</button>
-      <button class="btn" onclick="pelukAmoyy()">🫂 Peluk Online</button>
-      <button class="btn" onclick="cubitPipi()">🤏 Cubit Pipi</button>
-      <button class="btn" onclick="mintaJajan()">🧋 Minta Jajan</button>
-      <button class="btn" onclick="moodBooster()">🌟 Mood Booster</button>
-      <button class="btn" onclick="kasihMahkota()">👑 Princess Amoyy</button>
-    </div>
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 15px;
+}
+
+.box {
+  height: 65px;
+  border-radius: 15px;
+  background: #f39ab1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+}
+
+/* GAME 3 */
+
+.food {
+  font-size: 45px;
+  padding: 13px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: .2s;
+}
+
+.food:hover {
+  background: #ffe1e9;
+  transform: scale(1.1);
+}
+
+/* GAME 4 */
+
+.gift {
+  font-size: 65px;
+  cursor: pointer;
+  animation: shake 1.2s infinite;
+}
+
+.gift:hover {
+  animation: none;
+  transform: scale(1.15);
+}
+
+/* SURAT */
+
+.letter {
+  background: #fffafa;
+  border: 1px solid #f1d5dd;
+  border-radius: 20px;
+  padding: 22px;
+  margin-top: 15px;
+  text-align: left;
+  animation: appear .8s ease;
+}
+
+.letter h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.signature {
+  text-align: right;
+  margin-top: 25px;
+  color: #d45c7d;
+  font-weight: bold;
+}
+
+.final {
+  font-size: 12px;
+  text-align: center;
+  color: #999;
+}
+
+/* CONFETTI */
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  font-size: 20px;
+  animation: fall 3s linear forwards;
+  pointer-events: none;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shake {
+  0%,100% { transform: rotate(0); }
+  25% { transform: rotate(-7deg); }
+  75% { transform: rotate(7deg); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.small {
+  color: #999;
+  font-size: 12px;
+}
+
+.score {
+  font-weight: bold;
+  color: #d45c7d;
+}
+</style></head><body><div class="card">  <!-- HALAMAN AWAL -->  <section id="home"><div class="icon">🌷</div>
+
+<h1>Hai, Amoyy</h1>
+
+<p>
+  Ada sesuatu yang mau aku kasih.
+  Tapi sebelum sampai ke bagian akhirnya,
+  kamu harus melewati beberapa game kecil dulu 😄
+</p>
+
+<p class="small">
+  Tenang, gampang kok.
+</p>
+
+<button onclick="startGame()">
+  Mulai 🎮
+</button>
+
+  </section>  <!-- PROGRESS -->  <div id="progress" class="progress hidden">
+    <div class="dot" id="dot1"></div>
+    <div class="dot" id="dot2"></div>
+    <div class="dot" id="dot3"></div>
+    <div class="dot" id="dot4"></div>
+  </div>  <!-- GAME 1 -->  <section id="game1" class="hidden"><h2>Game 1 — Tangkap Hati 💗</h2>
+
+<p>
+  Klik hati yang muncul sebanyak
+  <b>7 kali</b>.
+</p>
+
+<p>
+  Score:
+  <span class="score" id="score1">0</span> / 7
+</p>
+
+<div class="game-area" id="area1">
+  <div id="heart" onclick="catchHeart()">💗</div>
+</div>
+
+  </section>  <!-- GAME 2 -->  <section id="game2" class="hidden"><h2>Game 2 — Cari Si Oyen 🐱</h2>
+
+<p>
+  Salah satu kotak menyembunyikan kucing.
+  Coba cari 😼
+</p>
+
+<div class="boxes" id="boxes"></div>
+
+<p class="small" id="boxMessage"></p>
+
+  </section>  <!-- GAME 3 -->  <section id="game3" class="hidden"><h2>Game 3 — Pilih yang Tepat 🍰</h2>
+
+<p>
+  Mana yang paling cocok buat nemenin
+  hari santai?
+</p>
+
+<div>
+  <span class="food" onclick="wrongFood()">🍕</span>
+  <span class="food" onclick="wrongFood()">🍜</span>
+  <span class="food" onclick="rightFood()">🍰</span>
+  <span class="food" onclick="wrongFood()">🍔</span>
+</div>
+
+<p id="foodMessage" class="small"></p>
+
+  </section>  <!-- GAME 4 -->  <section id="game4" class="hidden"><h2>Game 4 — Buka Hadiahnya 🎁</h2>
+
+<p>
+  Tinggal satu langkah lagi.
+  Klik hadiahnya.
+</p>
+
+<div class="game-area"
+     style="display:flex;align-items:center;justify-content:center;">
+
+  <div class="gift" onclick="openGift()">🎁</div>
+
+</div>
+
+  </section>  <!-- SURAT -->  <section id="letterSection" class="hidden"><div class="icon">💌</div>
+
+<h2>Surat kecil buat Amoyy</h2>
+
+<div class="letter">
+
+  <h3>Untuk Amoyy 🌷</h3>
+
+  <p>
+    Hai, Amoyy.
+  </p>
+
+  <p>
+    Kalau kamu sudah sampai di sini,
+    berarti semua game kecil tadi berhasil dilewati.
+    Lumayan juga ternyata 😄
+  </p>
+
+  <p>
+    Aku cuma mau bilang terima kasih.
+    Terima kasih karena sudah menjadi seseorang
+    yang bisa membuat hari terasa sedikit lebih menyenangkan.
+  </p>
+
+  <p>
+    Semoga ke depannya kamu selalu menemukan
+    hal-hal baik, punya banyak alasan untuk tersenyum,
+    dan tetap menjadi diri kamu sendiri.
+  </p>
+
+  <p>
+    Nggak ada kata-kata yang terlalu panjang.
+    Aku cuma berharap kamu selalu baik-baik saja
+    dan menikmati setiap proses yang sedang kamu jalani.
+  </p>
+
+  <p>
+    Happy World Girls' Day, Amoyy. 🌸
+  </p>
+
+  <div class="signature">
+    — dari seseorang yang peduli :)
   </div>
 
-  <button class="music-btn" onclick="toggleMusic()" id="musicToggle">🎵</button>
+</div>
 
-  <audio id="bgMusic" loop>
-    <source src="https://feeldreams.github.io/audio/thousand.mp3" type="audio/mpeg">
-  </audio>
+<p class="final">
+  Kamu berhasil menyelesaikan semuanya 🎉
+</p>
 
-  <script>
-    const bgMusic = document.getElementById('bgMusic');
-    let isPlaying = false;
+  </section></div><script>
 
-    function toggleMusic() {
-      if (isPlaying) {
-        bgMusic.pause();
-        document.getElementById('musicToggle').innerText = '🔇';
+/* =========================
+   MUSIK
+========================= */
+
+let audioContext;
+let musicStarted = false;
+
+function startMusic() {
+
+  if (musicStarted) return;
+
+  musicStarted = true;
+
+  audioContext = new (window.AudioContext ||
+                      window.webkitAudioContext)();
+
+  const notes = [
+    261.63,
+    329.63,
+    392.00,
+    329.63,
+    293.66,
+    349.23,
+    440.00,
+    349.23
+  ];
+
+  let index = 0;
+
+  function playNote() {
+
+    if (!musicStarted) return;
+
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    osc.frequency.value = notes[index];
+    osc.type = "sine";
+
+    gain.gain.setValueAtTime(
+      0.0001,
+      audioContext.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+      0.035,
+      audioContext.currentTime + 0.05
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+      0.0001,
+      audioContext.currentTime + 0.8
+    );
+
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+
+    osc.start();
+    osc.stop(audioContext.currentTime + 0.85);
+
+    index = (index + 1) % notes.length;
+
+    setTimeout(playNote, 850);
+  }
+
+  playNote();
+}
+
+
+/* =========================
+   START
+========================= */
+
+function startGame() {
+
+  startMusic();
+
+  document.getElementById("home")
+    .classList.add("hidden");
+
+  document.getElementById("progress")
+    .classList.remove("hidden");
+
+  showGame(1);
+}
+
+
+/* =========================
+   GAME SYSTEM
+========================= */
+
+function showGame(number) {
+
+  for (let i = 1; i <= 4; i++) {
+
+    document.getElementById("game" + i)
+      .classList.add("hidden");
+
+    document.getElementById("dot" + i)
+      .classList.remove("active");
+  }
+
+  document.getElementById("game" + number)
+    .classList.remove("hidden");
+
+  document.getElementById("dot" + number)
+    .classList.add("active");
+
+  if (number === 1) {
+    moveHeart();
+  }
+
+  if (number === 2) {
+    createBoxes();
+  }
+}
+
+
+/* =========================
+   GAME 1
+========================= */
+
+let score1 = 0;
+
+function catchHeart() {
+
+  score1++;
+
+  document.getElementById("score1")
+    .innerText = score1;
+
+  if (score1 >= 7) {
+
+    setTimeout(() => {
+      showGame(2);
+    }, 500);
+
+  } else {
+
+    moveHeart();
+
+  }
+}
+
+function moveHeart() {
+
+  const area =
+    document.getElementById("area1");
+
+  const heart =
+    document.getElementById("heart");
+
+  const maxX =
+    area.clientWidth - 50;
+
+  const maxY =
+    area.clientHeight - 50;
+
+  heart.style.left =
+    Math.random() * maxX + "px";
+
+  heart.style.top =
+    Math.random() * maxY + "px";
+}
+
+
+/* =========================
+   GAME 2
+========================= */
+
+function createBoxes() {
+
+  const container =
+    document.getElementById("boxes");
+
+  container.innerHTML = "";
+
+  const correct =
+    Math.floor(Math.random() * 9);
+
+  for (let i = 0; i < 9; i++) {
+
+    const box =
+      document.createElement("div");
+
+    box.className = "box";
+    box.innerText = "❓";
+
+    box.onclick = function() {
+
+      if (i === correct) {
+
+        box.innerText = "🐱";
+
+        document.getElementById("boxMessage")
+          .innerText = "Ketemu! 😼";
+
+        setTimeout(() => {
+          showGame(3);
+        }, 700);
+
       } else {
-        bgMusic.play();
-        document.getElementById('musicToggle').innerText = '🎵';
+
+        box.innerText = "📦";
+
+        document.getElementById("boxMessage")
+          .innerText = "Bukan yang ini 😆 Coba lagi.";
+
       }
-      isPlaying = !isPlaying;
-    }
 
-    // Fungsi Buka Surat
-    function bukaSurat() {
-      const letter = document.getElementById('letterBox');
-      if (letter.style.display === 'block') {
-        letter.style.display = 'none';
-      } else {
-        letter.style.display = 'block';
-        if (!isPlaying) toggleMusic();
-        Swal.fire({
-          title: 'Spesial Buat Amoyy 💌',
-          text: 'Surat manisnya sudah terbuka di bawah yaa! 💕',
-          icon: 'success',
-          confirmButtonColor: '#ff4d6d'
-        });
-      }
-    }
+    };
 
-    // Interaksi Tombol-Tombol Lucu
-    function kirimLove() {
-      hujanLove();
-      Swal.fire({
-        title: '🩷 Cinta Buat Amoyy 🩷',
-        text: 'Mengirimkan 1.000.000+ cinta dan kasih sayang melimpah khusus buat Amoyy! 💕✨',
-        imageUrl: 'https://feeldreams.github.io/bunga.gif',
-        imageWidth: 120,
-        imageHeight: 120,
-        confirmButtonColor: '#ff4d6d'
-      });
-    }
+    container.appendChild(box);
+  }
+}
 
-    function pelukAmoyy() {
-      Swal.fire({
-        title: '🫂 Huggg For Amoyy!',
-        text: 'Sini-sini peluuuk erat-erat! 🤗 Jangan pernah ngerasa sendirian yaa!',
-        imageUrl: 'https://feeldreams.github.io/hug.gif',
-        imageWidth: 120,
-        imageHeight: 120,
-        confirmButtonColor: '#ff4d6d'
-      });
-    }
 
-    function cubitPipi() {
-      Swal.fire({
-        title: '🤏 *Cubit Pipi Amoyy*',
-        text: 'Aww pipi Amoyy gemesh banget kayak bakpao kenyal! Kalo sakit maaf yaa 😚',
-        imageUrl: 'https://feeldreams.github.io/cubit.gif',
-        imageWidth: 120,
-        imageHeight: 120,
-        confirmButtonColor: '#ff4d6d'
-      });
-    }
+/* =========================
+   GAME 3
+========================= */
 
-    function mintaJajan() {
-      Swal.fire({
-        title: '🧋 Minta Jajan Nih?',
-        text: 'Amoyy mau jajan apa hari ini? Boba, seblak, atau es krim? Langsung sebutin yaa! 😋🍦',
-        imageUrl: 'https://feeldreams.github.io/makan.gif',
-        imageWidth: 120,
-        imageHeight: 120,
-        confirmButtonColor: '#ff4d6d'
-      });
-    }
+function wrongFood() {
 
-    function moodBooster() {
-      const quotes = [
-        "Amoyy itu hebat banget dan selalu bisa laluin hal-hal sulit! 💪✨",
-        "Dunia jadi jauh lebih indah kalau Amoyy lagi tersenyum! 😊🌸",
-        "Jangan lupa istirahat ya Amoyy, kamu udah berusaha yang terbaik hari ini! 🌟",
-        "Amoyy itu sosok yang super spesial & berharga banget! 🥰"
-      ];
-      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-      Swal.fire({
-        title: '🌟 Pesan Semangat Amoyy 🌟',
-        text: randomQuote,
-        imageUrl: 'https://feeldreams.github.io/gemoys.gif',
-        imageWidth: 120,
-        imageHeight: 120,
-        confirmButtonColor: '#ff4d6d'
-      });
-    }
+  document.getElementById("foodMessage")
+    .innerText =
+    "Bukan itu 😆 Coba pilih yang lain.";
 
-    function kasihMahkota() {
-      Swal.fire({
-        title: '👑 Princess Amoyy',
-        text: 'Mahkota ini pas banget dipakai sama Princess Amoyy yang tercantik! ✨👸',
-        imageUrl: 'https://feeldreams.github.io/peach.gif',
-        imageWidth: 120,
-        imageHeight: 120,
-        confirmButtonColor: '#ff4d6d'
-      });
-    }
+}
 
-    // Efek Hati Melayang di Background
-    function createHearts() {
-      const container = document.getElementById('hearts-container');
-      const symbols = ['🩷', '💖', '✨', '🌸', '🩵'];
-      for (let i = 0; i < 18; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('bg-heart');
-        heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
-        heart.style.fontSize = (Math.random() * 12 + 14) + 'px';
-        container.appendChild(heart);
-      }
-    }
+function rightFood() {
 
-    function hujanLove() {
-      const container = document.getElementById('hearts-container');
-      for (let i = 0; i < 15; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('bg-heart');
-        heart.innerHTML = '💖';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
-        heart.style.fontSize = '24px';
-        container.appendChild(heart);
-        setTimeout(() => heart.remove(), 3000);
-      }
-    }
+  document.getElementById("foodMessage")
+    .innerText =
+    "Nah, benar! 🍰";
 
-    createHearts();
-  </script>
-</body>
+  setTimeout(() => {
+    showGame(4);
+  }, 800);
+
+}
+
+
+/* =========================
+   GAME 4
+========================= */
+
+function openGift() {
+
+  document.getElementById("progress")
+    .classList.add("hidden");
+
+  document.getElementById("game4")
+    .classList.add("hidden");
+
+  document.getElementById("letterSection")
+    .classList.remove("hidden");
+
+  confetti();
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function confetti() {
+
+  const items =
+    ["🌸","💗","✨","🎀","🌷","⭐"];
+
+  for (let i = 0; i < 35; i++) {
+
+    const piece =
+      document.createElement("div");
+
+    piece.className = "confetti";
+
+    piece.innerText =
+      items[Math.floor(Math.random() * items.length)];
+
+    piece.style.left =
+      Math.random() * 100 + "vw";
+
+    piece.style.animationDelay =
+      Math.random() * 1.5 + "s";
+
+    document.body.appendChild(piece);
+
+    setTimeout(() => {
+      piece.remove();
+    }, 4000);
+  }
+}
+
+</script></body>
 </html>
