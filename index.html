@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Amoyy 🌷</title><style>
+<title>For Amoyy 🌷</title>
+<style>
 * {
   box-sizing: border-box;
 }
@@ -251,167 +253,130 @@ button:active {
   font-weight: bold;
   color: #d45c7d;
 }
-</style></head><body><div class="card">  <!-- HALAMAN AWAL -->  <section id="home"><div class="icon">🌷</div>
+</style>
+</head>
+<body>
+<div class="card">
+  <!-- HALAMAN AWAL -->
+  <section id="home">
+    <div class="icon">🌷</div>
+    <h1>Hai, Amoyy</h1>
+    <p>
+      Ada sesuatu yang mau aku kasih.
+      Tapi main game dulu yaa,gampang kok.
+    </p>
+    <p class="small">Tenang, gampang kok.</p>
+    <button onclick="startGame()">Mulai 🎮</button>
+  </section>
 
-<h1>Hai, Amoyy</h1>
-
-<p>
-  Ada sesuatu yang mau aku kasih.
-  Tapi sebelum sampai ke bagian akhirnya,
-  kamu harus melewati beberapa game kecil dulu 😄
-</p>
-
-<p class="small">
-  Tenang, gampang kok.
-</p>
-
-<button onclick="startGame()">
-  Mulai 🎮
-</button>
-
-  </section>  <!-- PROGRESS -->  <div id="progress" class="progress hidden">
+  <!-- PROGRESS -->
+  <div id="progress" class="progress hidden">
     <div class="dot" id="dot1"></div>
     <div class="dot" id="dot2"></div>
     <div class="dot" id="dot3"></div>
     <div class="dot" id="dot4"></div>
-  </div>  <!-- GAME 1 -->  <section id="game1" class="hidden"><h2>Game 1 — Tangkap Hati 💗</h2>
-
-<p>
-  Klik hati yang muncul sebanyak
-  <b>7 kali</b>.
-</p>
-
-<p>
-  Score:
-  <span class="score" id="score1">0</span> / 7
-</p>
-
-<div class="game-area" id="area1">
-  <div id="heart" onclick="catchHeart()">💗</div>
-</div>
-
-  </section>  <!-- GAME 2 -->  <section id="game2" class="hidden"><h2>Game 2 — Cari Si Oyen 🐱</h2>
-
-<p>
-  Salah satu kotak menyembunyikan kucing.
-  Coba cari 😼
-</p>
-
-<div class="boxes" id="boxes"></div>
-
-<p class="small" id="boxMessage"></p>
-
-  </section>  <!-- GAME 3 -->  <section id="game3" class="hidden"><h2>Game 3 — Pilih yang Tepat 🍰</h2>
-
-<p>
-  Mana yang paling cocok buat nemenin
-  hari santai?
-</p>
-
-<div>
-  <span class="food" onclick="wrongFood()">🍕</span>
-  <span class="food" onclick="wrongFood()">🍜</span>
-  <span class="food" onclick="rightFood()">🍰</span>
-  <span class="food" onclick="wrongFood()">🍔</span>
-</div>
-
-<p id="foodMessage" class="small"></p>
-
-  </section>  <!-- GAME 4 -->  <section id="game4" class="hidden"><h2>Game 4 — Buka Hadiahnya 🎁</h2>
-
-<p>
-  Tinggal satu langkah lagi.
-  Klik hadiahnya.
-</p>
-
-<div class="game-area"
-     style="display:flex;align-items:center;justify-content:center;">
-
-  <div class="gift" onclick="openGift()">🎁</div>
-
-</div>
-
-  </section>  <!-- SURAT -->  <section id="letterSection" class="hidden"><div class="icon">💌</div>
-
-<h2>Surat kecil buat Amoyy</h2>
-
-<div class="letter">
-
-  <h3>Untuk Amoyy 🌷</h3>
-
-  <p>
-    Hai, Amoyy.
-  </p>
-
-  <p>
-    wihh kamu udah sampai di sini,game nya kegampangan ya moyy
-  </p>
-
-  <p>
-    Aku cuma mau bilang terima kasih.
-    Terima kasih karena sudah menjadi seseorang
-    yang bisa membuat hari ku terasa lebih menyenangkan.
-  </p>
-
-  <p>
-    Semoga ke depannya kamu selalu menemukan
-    hal-hal baik, punya banyak alasan untuk tersenyum,
-    dan tetap menjadi diri kamu sendiri.❤
-  </p>
-
-  <p>
-    Nggak ada kata-kata yang terlalu panjang.
-    Aku cuma berharap kamu selalu baik-baik saja
-    dan menikmati setiap proses yang sedang kamu jalani.
-  </p>
-
-  <p>
-    Happy World Girls' Day, Amoyy. 🌸
-  </p>
-
-  <div class="signature">
-    - Haikal
   </div>
 
+  <!-- GAME 1 -->
+  <section id="game1" class="hidden">
+    <h2>Game 1 — Tangkap Hati 💗</h2>
+    <p>Klik hati yang muncul sebanyak <b>7 kali</b>.</p>
+    <p>Score: <span class="score" id="score1">0</span> / 7</p>
+    <div class="game-area" id="area1">
+      <div id="heart" onclick="catchHeart()">💗</div>
+    </div>
+  </section>
+
+  <!-- GAME 2 -->
+  <section id="game2" class="hidden">
+    <h2>Game 2 — Cari Si Oyen 🐱</h2>
+    <p>Salah satu kotak menyembunyikan kucing. Coba cari 😼</p>
+    <div class="boxes" id="boxes"></div>
+    <p class="small" id="boxMessage"></p>
+  </section>
+
+  <!-- GAME 3 -->
+  <section id="game3" class="hidden">
+    <h2>Game 3 — Pilih yang Tepat 🍰</h2>
+    <p>Mana yang paling cocok buat nemenin hari santai?</p>
+    <div>
+      <span class="food" onclick="wrongFood()">🍕</span>
+      <span class="food" onclick="wrongFood()">🍜</span>
+      <span class="food" onclick="rightFood()">🍰</span>
+      <span class="food" onclick="wrongFood()">🍔</span>
+    </div>
+    <p id="foodMessage" class="small"></p>
+  </section>
+
+  <!-- GAME 4 -->
+  <section id="game4" class="hidden">
+    <h2>Game 4 — Buka Hadiahnya 🎁</h2>
+    <p>Tinggal satu langkah lagi. Klik hadiahnya.</p>
+    <div class="game-area" style="display:flex;align-items:center;justify-content:center;">
+      <div class="gift" onclick="openGift()">🎁</div>
+    </div>
+  </section>
+
+  <!-- SURAT -->
+  <section id="letterSection" class="hidden">
+    <div class="icon">💌</div>
+    <h2>Surat kecil buat Amoyy</h2>
+    <div class="letter">
+      <h3>Untuk Amoyy 🌷</h3>
+      <p>Hai, Amoyy.</p>
+      <p>
+        wihh kamu udah sampai sini,
+        berarti semua game kecil uda beres,lumayan juga.
+      </p>
+      <p>
+        Aku cuma mau bilang terima kasih.
+        Terima kasih karena sudah menjadi seseorang
+        yang membuat hari ku terasa lebih menyenangkan.
+      </p>
+      <p>
+        Semoga ke depannya kamu selalu menemukan
+        hal-hal baik, punya banyak alasan untuk tersenyum,
+        dan tetap menjadi diri kamu sendiri.❤
+      </p>
+      <p>
+        Nggak ada kata-kata yang terlalu panjang.
+        Aku cuma berharap kamu selalu baik-baik saja
+        dan menikmati setiap proses yang sedang kamu jalani.
+      </p>
+      <p>Happy World Girls' Day, Amoyy. 🌸</p>
+      <div class="signature">— HAIKAL</div>
+    </div>
+    <p class="final">Kamu berhasil menyelesaikan semuanya 🎉</p>
+  </section>
 </div>
 
-<p class="final">
-  Kamu berhasil menyelesaikan semuanya 🎉
-</p>
-
-  </section></div><script>
+<script>
 
 /* =========================
-   MUSIK
+   MUSIK & EFEK SUARA (SFX)
 ========================= */
 
 let audioContext;
 let musicStarted = false;
 
+function initAudio() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioContext.state === 'suspended') {
+    audioContext.resume();
+  }
+}
+
 function startMusic() {
-
   if (musicStarted) return;
-
   musicStarted = true;
+  initAudio();
 
-  audioContext = new (window.AudioContext ||
-                      window.webkitAudioContext)();
-
-  const notes = [
-    261.63,
-    329.63,
-    392.00,
-    329.63,
-    293.66,
-    349.23,
-    440.00,
-    349.23
-  ];
-
+  const notes = [261.63, 329.63, 392.00, 329.63, 293.66, 349.23, 440.00, 349.23];
   let index = 0;
 
   function playNote() {
-
     if (!musicStarted) return;
 
     const osc = audioContext.createOscillator();
@@ -420,20 +385,9 @@ function startMusic() {
     osc.frequency.value = notes[index];
     osc.type = "sine";
 
-    gain.gain.setValueAtTime(
-      0.0001,
-      audioContext.currentTime
-    );
-
-    gain.gain.exponentialRampToValueAtTime(
-      0.035,
-      audioContext.currentTime + 0.05
-    );
-
-    gain.gain.exponentialRampToValueAtTime(
-      0.0001,
-      audioContext.currentTime + 0.8
-    );
+    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.035, audioContext.currentTime + 0.05);
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.8);
 
     osc.connect(gain);
     gain.connect(audioContext.destination);
@@ -442,62 +396,97 @@ function startMusic() {
     osc.stop(audioContext.currentTime + 0.85);
 
     index = (index + 1) % notes.length;
-
     setTimeout(playNote, 850);
   }
 
   playNote();
 }
 
+function playSFX(type) {
+  initAudio();
+  const now = audioContext.currentTime;
+
+  if (type === 'pop') {
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(450, now);
+    osc.frequency.exponentialRampToValueAtTime(900, now + 0.08);
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    osc.start(now);
+    osc.stop(now + 0.08);
+  } else if (type === 'success') {
+    [523.25, 659.25, 783.99].forEach((freq, i) => {
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      osc.type = 'triangle';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.08, now + i * 0.09);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.2);
+      osc.connect(gain);
+      gain.connect(audioContext.destination);
+      osc.start(now + i * 0.09);
+      osc.stop(now + i * 0.09 + 0.2);
+    });
+  } else if (type === 'wrong') {
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(220, now);
+    osc.frequency.linearRampToValueAtTime(140, now + 0.15);
+    gain.gain.setValueAtTime(0.06, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+    osc.start(now);
+    osc.stop(now + 0.15);
+  } else if (type === 'fanfare') {
+    const notes = [523.25, 659.25, 783.99, 1046.50];
+    notes.forEach((freq, i) => {
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.1, now + i * 0.11);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.11 + 0.45);
+      osc.connect(gain);
+      gain.connect(audioContext.destination);
+      osc.start(now + i * 0.11);
+      osc.stop(now + i * 0.11 + 0.45);
+    });
+  }
+}
 
 /* =========================
    START
 ========================= */
 
 function startGame() {
-
   startMusic();
-
-  document.getElementById("home")
-    .classList.add("hidden");
-
-  document.getElementById("progress")
-    .classList.remove("hidden");
-
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("progress").classList.remove("hidden");
   showGame(1);
 }
-
 
 /* =========================
    GAME SYSTEM
 ========================= */
 
 function showGame(number) {
-
   for (let i = 1; i <= 4; i++) {
-
-    document.getElementById("game" + i)
-      .classList.add("hidden");
-
-    document.getElementById("dot" + i)
-      .classList.remove("active");
+    document.getElementById("game" + i).classList.add("hidden");
+    document.getElementById("dot" + i).classList.remove("active");
   }
 
-  document.getElementById("game" + number)
-    .classList.remove("hidden");
+  document.getElementById("game" + number).classList.remove("hidden");
+  document.getElementById("dot" + number).classList.add("active");
 
-  document.getElementById("dot" + number)
-    .classList.add("active");
-
-  if (number === 1) {
-    moveHeart();
-  }
-
-  if (number === 2) {
-    createBoxes();
-  }
+  if (number === 1) moveHeart();
+  if (number === 2) createBoxes();
 }
-
 
 /* =========================
    GAME 1
@@ -506,174 +495,102 @@ function showGame(number) {
 let score1 = 0;
 
 function catchHeart() {
-
+  playSFX('pop');
   score1++;
-
-  document.getElementById("score1")
-    .innerText = score1;
+  document.getElementById("score1").innerText = score1;
 
   if (score1 >= 7) {
-
-    setTimeout(() => {
-      showGame(2);
-    }, 500);
-
+    playSFX('success');
+    setTimeout(() => { showGame(2); }, 500);
   } else {
-
     moveHeart();
-
   }
 }
 
 function moveHeart() {
+  const area = document.getElementById("area1");
+  const heart = document.getElementById("heart");
+  const maxX = area.clientWidth - 50;
+  const maxY = area.clientHeight - 50;
 
-  const area =
-    document.getElementById("area1");
-
-  const heart =
-    document.getElementById("heart");
-
-  const maxX =
-    area.clientWidth - 50;
-
-  const maxY =
-    area.clientHeight - 50;
-
-  heart.style.left =
-    Math.random() * maxX + "px";
-
-  heart.style.top =
-    Math.random() * maxY + "px";
+  heart.style.left = Math.random() * maxX + "px";
+  heart.style.top = Math.random() * maxY + "px";
 }
-
 
 /* =========================
    GAME 2
 ========================= */
 
 function createBoxes() {
-
-  const container =
-    document.getElementById("boxes");
-
+  const container = document.getElementById("boxes");
   container.innerHTML = "";
-
-  const correct =
-    Math.floor(Math.random() * 9);
+  const correct = Math.floor(Math.random() * 9);
 
   for (let i = 0; i < 9; i++) {
-
-    const box =
-      document.createElement("div");
-
+    const box = document.createElement("div");
     box.className = "box";
     box.innerText = "❓";
 
     box.onclick = function() {
-
       if (i === correct) {
-
+        playSFX('success');
         box.innerText = "🐱";
-
-        document.getElementById("boxMessage")
-          .innerText = "Ketemu! 😼";
-
-        setTimeout(() => {
-          showGame(3);
-        }, 700);
-
+        document.getElementById("boxMessage").innerText = "Ketemu! 😼";
+        setTimeout(() => { showGame(3); }, 700);
       } else {
-
+        playSFX('wrong');
         box.innerText = "📦";
-
-        document.getElementById("boxMessage")
-          .innerText = "Bukan yang ini 😆 Coba lagi.";
-
+        document.getElementById("boxMessage").innerText = "Bukan yang ini 😆 Coba lagi.";
       }
-
     };
-
     container.appendChild(box);
   }
 }
-
 
 /* =========================
    GAME 3
 ========================= */
 
 function wrongFood() {
-
-  document.getElementById("foodMessage")
-    .innerText =
-    "Bukan itu 😆 Coba pilih yang lain.";
-
+  playSFX('wrong');
+  document.getElementById("foodMessage").innerText = "Bukan itu 😆 Coba pilih yang lain.";
 }
 
 function rightFood() {
-
-  document.getElementById("foodMessage")
-    .innerText =
-    "Nah, benar! 🍰";
-
-  setTimeout(() => {
-    showGame(4);
-  }, 800);
-
+  playSFX('success');
+  document.getElementById("foodMessage").innerText = "Nah, benar! 🍰";
+  setTimeout(() => { showGame(4); }, 800);
 }
-
 
 /* =========================
    GAME 4
 ========================= */
 
 function openGift() {
-
-  document.getElementById("progress")
-    .classList.add("hidden");
-
-  document.getElementById("game4")
-    .classList.add("hidden");
-
-  document.getElementById("letterSection")
-    .classList.remove("hidden");
-
+  playSFX('fanfare');
+  document.getElementById("progress").classList.add("hidden");
+  document.getElementById("game4").classList.add("hidden");
+  document.getElementById("letterSection").classList.remove("hidden");
   confetti();
 }
-
 
 /* =========================
    CONFETTI
 ========================= */
 
 function confetti() {
-
-  const items =
-    ["🌸","💗","✨","🎀","🌷","⭐"];
-
+  const items = ["🌸","💗","✨","🎀","🌷","⭐"];
   for (let i = 0; i < 35; i++) {
-
-    const piece =
-      document.createElement("div");
-
+    const piece = document.createElement("div");
     piece.className = "confetti";
-
-    piece.innerText =
-      items[Math.floor(Math.random() * items.length)];
-
-    piece.style.left =
-      Math.random() * 100 + "vw";
-
-    piece.style.animationDelay =
-      Math.random() * 1.5 + "s";
-
+    piece.innerText = items[Math.floor(Math.random() * items.length)];
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.animationDelay = Math.random() * 1.5 + "s";
     document.body.appendChild(piece);
-
-    setTimeout(() => {
-      piece.remove();
-    }, 4000);
+    setTimeout(() => { piece.remove(); }, 4000);
   }
 }
 
-</script></body>
+</script>
+</body>
 </html>
