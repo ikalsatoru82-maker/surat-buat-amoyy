@@ -262,8 +262,8 @@ button:active {
     <div class="icon">🌷</div>
     <h1>Hai, Amoyy</h1>
     <p>
-      Ada sesuatu yang mau aku kasih.
-      Tapi main game dulu yaa,gampang kok.
+      Ada sesuatu yang mau aku kasih,
+      Tapi main game dulu yaa.
     </p>
     <p class="small">Tenang, gampang kok.</p>
     <button onclick="startGame()">Mulai 🎮</button>
@@ -325,18 +325,20 @@ button:active {
       <h3>Untuk Amoyy 🌷</h3>
       <p>Hai, Amoyy.</p>
       <p>
-        wihh kamu udah sampai sini,
-        berarti semua game kecil uda beres,lumayan juga.
+        wihh udah sampai sini,berarti uda beres game nya,
+        lumayan juga😏
       </p>
       <p>
         Aku cuma mau bilang terima kasih.
-        Terima kasih karena sudah menjadi seseorang
-        yang membuat hari ku terasa lebih menyenangkan.
+Makasih ya, udah jadi salah satu orang yang selalu bikin hari-hariku terasa lebih berwarna. 
+        Makasih juga buat perhatian, cerita, dan hal-hal kecil yang mungkin sederhana, 
+        tapi berarti buat aku. Semoga kamu selalu bahagia, tetap jadi diri kamu sendiri, 
+        dan jangan lupa kalau kamu itu berharga. 🌷
       </p>
       <p>
         Semoga ke depannya kamu selalu menemukan
         hal-hal baik, punya banyak alasan untuk tersenyum,
-        dan tetap menjadi diri kamu sendiri.❤
+        dan tetap menjadi diri kamu sendiri.
       </p>
       <p>
         Nggak ada kata-kata yang terlalu panjang.
@@ -358,6 +360,7 @@ button:active {
 
 let audioContext;
 let musicStarted = false;
+let letterMusicStarted = false;
 
 function initAudio() {
   if (!audioContext) {
@@ -400,6 +403,48 @@ function startMusic() {
   }
 
   playNote();
+}
+
+function startLetterMusic() {
+  musicStarted = false; // Matikan lagu game
+  if (letterMusicStarted) return;
+  letterMusicStarted = true;
+  initAudio();
+
+  // Arpeggio melodi romantis & hangat khusus untuk membaca surat
+  const letterMelody = [
+    261.63, 329.63, 392.00, 523.25, 392.00, 329.63,
+    220.00, 261.63, 349.23, 440.00, 349.23, 261.63,
+    174.61, 261.63, 349.23, 440.00, 349.23, 261.63,
+    196.00, 246.94, 293.66, 392.00, 293.66, 246.94
+  ];
+
+  let index = 0;
+
+  function playSweetNote() {
+    if (!letterMusicStarted) return;
+
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    osc.frequency.value = letterMelody[index];
+    osc.type = "sine";
+
+    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.045, audioContext.currentTime + 0.1);
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.95);
+
+    osc.connect(gain);
+    gain.connect(audioContext.destination);
+
+    osc.start();
+    osc.stop(audioContext.currentTime + 1.0);
+
+    index = (index + 1) % letterMelody.length;
+    setTimeout(playSweetNote, 420);
+  }
+
+  playSweetNote();
 }
 
 function playSFX(type) {
@@ -568,6 +613,12 @@ function rightFood() {
 
 function openGift() {
   playSFX('fanfare');
+  
+  // Transisi musik ke lagu romantis saat surat terbuka
+  setTimeout(() => {
+    startLetterMusic();
+  }, 600);
+
   document.getElementById("progress").classList.add("hidden");
   document.getElementById("game4").classList.add("hidden");
   document.getElementById("letterSection").classList.remove("hidden");
