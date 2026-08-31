@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Message for Amoyy 🌸✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background Hati Melayang */
+    .bg-heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+    
+    .card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      padding: 30px 24px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border: 2px solid rgba(255,255,255,0.7);
+      z-index: 1;
+    }
+
+    .sticker {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      color: #ff4b72;
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .letter-box {
+      background: #fff0f3;
+      border: 2px dashed #ff8fa3;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 18px;
+      display: none;
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4a4a4a;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Grid Tombol-Tombol Lucu */
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      background: #ff758f;
+      color: white;
+      border: none;
+      padding: 12px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 117, 143, 0.3);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn:hover {
+      background: #ff4d6d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 77, 109, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-main {
+      grid-column: span 2;
+      background: linear-gradient(45deg, #ff4d6d, #ff758f);
+      font-size: 15px;
+      padding: 14px;
+    }
+
+    /* Tombol Musik Floating */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="hearts-container"></div>
+
+  <div class="card">
+    <img src="https://feeldreams.github.io/pandakuning.gif" alt="Sticker Amoyy" class="sticker">
+    
+    <h1>Alooo Amoyy! 🌺</h1>
+    <p class="subtitle">Sentuh tombol-tombol lucu di bawah ini ya! 🫶✨</p>
+
+    <button class="btn btn-main" onclick="bukaSurat()">💌 Buka Surat Buat Amoyy</button>
+
+    <div class="letter-box" id="letterBox">
+      <p><b>Hai Amoyy manis! 💕</b></p>
+      <p>Makasih ya udah selalu hadir dan bikin suasana jadi lebih menyenangkan. Tetap jadi <b>Amoyy</b> yang ceria, menggemaskan, dan selalu tersenyum!</p>
+      <p style="margin-top: 8px;">Kamu itu sangat berharga! ᯓᡣ𐭩✨</p>
+    </div>
+
+    <div class="buttons-grid">
+      <button class="btn" onclick="kirimLove()">🩷 Kirim Love</button>
+      <button class="btn" onclick="pelukAmoyy()">🫂 Peluk Online</button>
+      <button class="btn" onclick="cubitPipi()">🤏 Cubit Pipi</button>
+      <button class="btn" onclick="mintaJajan()">🧋 Minta Jajan</button>
+      <button class="btn" onclick="moodBooster()">🌟 Mood Booster</button>
+      <button class="btn" onclick="kasihMahkota()">👑 Princess Amoyy</button>
+    </div>
+  </div>
+
+  <button class="music-btn" onclick="toggleMusic()" id="musicToggle">🎵</button>
+
+  <audio id="bgMusic" loop>
+    <source src="https://feeldreams.github.io/audio/thousand.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const bgMusic = document.getElementById('bgMusic');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        bgMusic.pause();
+        document.getElementById('musicToggle').innerText = '🔇';
+      } else {
+        bgMusic.play();
+        document.getElementById('musicToggle').innerText = '🎵';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Fungsi Buka Surat
+    function bukaSurat() {
+      const letter = document.getElementById('letterBox');
+      if (letter.style.display === 'block') {
+        letter.style.display = 'none';
+      } else {
+        letter.style.display = 'block';
+        if (!isPlaying) toggleMusic();
+        Swal.fire({
+          title: 'Spesial Buat Amoyy 💌',
+          text: 'Surat manisnya sudah terbuka di bawah yaa! 💕',
+          icon: 'success',
+          confirmButtonColor: '#ff4d6d'
+        });
+      }
+    }
+
+    // Interaksi Tombol-Tombol Lucu
+    function kirimLove() {
+      hujanLove();
+      Swal.fire({
+        title: '🩷 Cinta Buat Amoyy 🩷',
+        text: 'Mengirimkan 1.000.000+ cinta dan kasih sayang melimpah khusus buat Amoyy! 💕✨',
+        imageUrl: 'https://feeldreams.github.io/bunga.gif',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonColor: '#ff4d6d'
+      });
+    }
+
+    function pelukAmoyy() {
+      Swal.fire({
+        title: '🫂 Huggg For Amoyy!',
+        text: 'Sini-sini peluuuk erat-erat! 🤗 Jangan pernah ngerasa sendirian yaa!',
+        imageUrl: 'https://feeldreams.github.io/hug.gif',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonColor: '#ff4d6d'
+      });
+    }
+
+    function cubitPipi() {
+      Swal.fire({
+        title: '🤏 *Cubit Pipi Amoyy*',
+        text: 'Aww pipi Amoyy gemesh banget kayak bakpao kenyal! Kalo sakit maaf yaa 😚',
+        imageUrl: 'https://feeldreams.github.io/cubit.gif',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonColor: '#ff4d6d'
+      });
+    }
+
+    function mintaJajan() {
+      Swal.fire({
+        title: '🧋 Minta Jajan Nih?',
+        text: 'Amoyy mau jajan apa hari ini? Boba, seblak, atau es krim? Langsung sebutin yaa! 😋🍦',
+        imageUrl: 'https://feeldreams.github.io/makan.gif',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonColor: '#ff4d6d'
+      });
+    }
+
+    function moodBooster() {
+      const quotes = [
+        "Amoyy itu hebat banget dan selalu bisa laluin hal-hal sulit! 💪✨",
+        "Dunia jadi jauh lebih indah kalau Amoyy lagi tersenyum! 😊🌸",
+        "Jangan lupa istirahat ya Amoyy, kamu udah berusaha yang terbaik hari ini! 🌟",
+        "Amoyy itu sosok yang super spesial & berharga banget! 🥰"
+      ];
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      Swal.fire({
+        title: '🌟 Pesan Semangat Amoyy 🌟',
+        text: randomQuote,
+        imageUrl: 'https://feeldreams.github.io/gemoys.gif',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonColor: '#ff4d6d'
+      });
+    }
+
+    function kasihMahkota() {
+      Swal.fire({
+        title: '👑 Princess Amoyy',
+        text: 'Mahkota ini pas banget dipakai sama Princess Amoyy yang tercantik! ✨👸',
+        imageUrl: 'https://feeldreams.github.io/peach.gif',
+        imageWidth: 120,
+        imageHeight: 120,
+        confirmButtonColor: '#ff4d6d'
+      });
+    }
+
+    // Efek Hati Melayang di Background
+    function createHearts() {
+      const container = document.getElementById('hearts-container');
+      const symbols = ['🩷', '💖', '✨', '🌸', '🩵'];
+      for (let i = 0; i < 18; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('bg-heart');
+        heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        heart.style.fontSize = (Math.random() * 12 + 14) + 'px';
+        container.appendChild(heart);
+      }
+    }
+
+    function hujanLove() {
+      const container = document.getElementById('hearts-container');
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('bg-heart');
+        heart.innerHTML = '💖';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        heart.style.fontSize = '24px';
+        container.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+      }
+    }
+
+    createHearts();
+  </script>
+</body>
+</html>
