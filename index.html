@@ -330,7 +330,7 @@ button:active {
       </p>
       <p>
         Aku cuma mau bilang terima kasih.
-Makasih ya, udah jadi salah satu orang yang selalu bikin hari-hariku terasa lebih berwarna. 
+        Makasih ya, udah jadi salah satu orang yang selalu bikin hari-hariku terasa lebih berwarna. 
         Makasih juga buat perhatian, cerita, dan hal-hal kecil yang mungkin sederhana, 
         tapi berarti buat aku. Semoga kamu selalu bahagia, tetap jadi diri kamu sendiri, 
         dan jangan lupa kalau kamu itu berharga. 🌷
@@ -411,12 +411,18 @@ function startLetterMusic() {
   letterMusicStarted = true;
   initAudio();
 
-  // Arpeggio melodi romantis & hangat khusus untuk membaca surat
-  const letterMelody = [
-    261.63, 329.63, 392.00, 523.25, 392.00, 329.63,
-    220.00, 261.63, 349.23, 440.00, 349.23, 261.63,
-    174.61, 261.63, 349.23, 440.00, 349.23, 261.63,
-    196.00, 246.94, 293.66, 392.00, 293.66, 246.94
+  // Melodi "I Love You 3000" - Stephanie Poetri
+  const songData = [
+    // "Baby, take my hand"
+    { f: 329.63, d: 350 }, { f: 329.63, d: 350 }, { f: 329.63, d: 350 }, { f: 349.23, d: 350 }, { f: 392.00, d: 650 },
+    // "I want you to be my husband"
+    { f: 392.00, d: 300 }, { f: 440.00, d: 300 }, { f: 392.00, d: 300 }, { f: 349.23, d: 300 }, { f: 329.63, d: 300 }, { f: 293.66, d: 300 }, { f: 261.63, d: 650 },
+    // "Cause you're my Iron Man"
+    { f: 261.63, d: 300 }, { f: 293.66, d: 300 }, { f: 329.63, d: 350 }, { f: 329.63, d: 350 }, { f: 293.66, d: 300 }, { f: 293.66, d: 300 }, { f: 261.63, d: 650 },
+    // "And I love you 3000"
+    { f: 261.63, d: 320 }, { f: 293.66, d: 320 }, { f: 329.63, d: 420 }, { f: 392.00, d: 420 }, { f: 329.63, d: 420 }, { f: 293.66, d: 420 }, { f: 261.63, d: 900 },
+    // Jeda antar ulangan
+    { f: 0, d: 800 }
   ];
 
   let index = 0;
@@ -424,24 +430,29 @@ function startLetterMusic() {
   function playSweetNote() {
     if (!letterMusicStarted) return;
 
-    const osc = audioContext.createOscillator();
-    const gain = audioContext.createGain();
+    const current = songData[index];
 
-    osc.frequency.value = letterMelody[index];
-    osc.type = "sine";
+    if (current.f > 0) {
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
 
-    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.045, audioContext.currentTime + 0.1);
-    gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.95);
+      osc.frequency.value = current.f;
+      osc.type = "sine";
 
-    osc.connect(gain);
-    gain.connect(audioContext.destination);
+      gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.05, audioContext.currentTime + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + (current.d / 1000) - 0.05);
 
-    osc.start();
-    osc.stop(audioContext.currentTime + 1.0);
+      osc.connect(gain);
+      gain.connect(audioContext.destination);
 
-    index = (index + 1) % letterMelody.length;
-    setTimeout(playSweetNote, 420);
+      osc.start();
+      osc.stop(audioContext.currentTime + (current.d / 1000));
+    }
+
+    const duration = current.d;
+    index = (index + 1) % songData.length;
+    setTimeout(playSweetNote, duration);
   }
 
   playSweetNote();
@@ -614,7 +625,6 @@ function rightFood() {
 function openGift() {
   playSFX('fanfare');
   
-  // Transisi musik ke lagu romantis saat surat terbuka
   setTimeout(() => {
     startLetterMusic();
   }, 600);
