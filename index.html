@@ -388,8 +388,9 @@ function startMusic() {
     osc.frequency.value = notes[index];
     osc.type = "sine";
 
+    // Gain dinaikkan dari 0.035 ke 0.20
     gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.035, audioContext.currentTime + 0.05);
+    gain.gain.exponentialRampToValueAtTime(0.20, audioContext.currentTime + 0.05);
     gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 0.8);
 
     osc.connect(gain);
@@ -406,7 +407,7 @@ function startMusic() {
 }
 
 function startLetterMusic() {
-  musicStarted = false; // Matikan lagu game
+  musicStarted = false;
   if (letterMusicStarted) return;
   letterMusicStarted = true;
   initAudio();
@@ -439,8 +440,9 @@ function startLetterMusic() {
       osc.frequency.value = current.f;
       osc.type = "sine";
 
+      // Gain dinaikkan dari 0.05 ke 0.30
       gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.05, audioContext.currentTime + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.30, audioContext.currentTime + 0.05);
       gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + (current.d / 1000) - 0.05);
 
       osc.connect(gain);
@@ -468,7 +470,7 @@ function playSFX(type) {
     osc.type = 'sine';
     osc.frequency.setValueAtTime(450, now);
     osc.frequency.exponentialRampToValueAtTime(900, now + 0.08);
-    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.setValueAtTime(0.40, now); // Dinaikkan ke 0.40
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
     osc.connect(gain);
     gain.connect(audioContext.destination);
@@ -480,7 +482,7 @@ function playSFX(type) {
       const gain = audioContext.createGain();
       osc.type = 'triangle';
       osc.frequency.value = freq;
-      gain.gain.setValueAtTime(0.08, now + i * 0.09);
+      gain.gain.setValueAtTime(0.35, now + i * 0.09); // Dinaikkan ke 0.35
       gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.2);
       osc.connect(gain);
       gain.connect(audioContext.destination);
@@ -493,7 +495,7 @@ function playSFX(type) {
     osc.type = 'sawtooth';
     osc.frequency.setValueAtTime(220, now);
     osc.frequency.linearRampToValueAtTime(140, now + 0.15);
-    gain.gain.setValueAtTime(0.06, now);
+    gain.gain.setValueAtTime(0.25, now); // Dinaikkan ke 0.25
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
     osc.connect(gain);
     gain.connect(audioContext.destination);
@@ -506,7 +508,7 @@ function playSFX(type) {
       const gain = audioContext.createGain();
       osc.type = 'sine';
       osc.frequency.value = freq;
-      gain.gain.setValueAtTime(0.1, now + i * 0.11);
+      gain.gain.setValueAtTime(0.40, now + i * 0.11); // Dinaikkan ke 0.40
       gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.11 + 0.45);
       osc.connect(gain);
       gain.connect(audioContext.destination);
